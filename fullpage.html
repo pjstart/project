@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fullpage</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <style>
+        body{ margin: 0;}
+        html,body{ height:100%;}
+        header{
+            width:100%;
+            position:fixed;
+            padding: 20px 0;
+            background:rgba(0,0,0,0.8);
+            z-index: 10;
+        }
+        header nav{
+            width:800px; margin:auto;
+        }
+        header nav ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        header nav ul li{
+            width:200px;
+            text-align: center;
+            float:left;
+        }
+        header nav ul li a{
+            color:white;
+            text-decoration: none;
+        }
+        header nav ul li.active a{
+            color:#58ff00;
+        }
+        
+        #section0{
+            background: url(images/bg1.jpg) center center no-repeat;
+            background-size: cover;
+        }
+        #section1{
+            background: url(images/bg2.jpg) center center no-repeat;
+            background-size: cover;
+        }
+        #section2{
+            background: url(images/bg4.jpg) center center no-repeat;
+            background-size: cover;
+        }        
+        #section3{
+            background: url(images/bg5.jpg) center center no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script src="lib/fullpage.min.js"></script>
+    <script>
+        $(function(){
+            
+            $("#fullpage").fullpage({
+                
+                
+                anchors : [  'page1' , "page2", "page3", "page4"  ], // 섹션에 표시할 앵커속성 data-menuanchor속성에 정의
+                menu : ".menu", //연결할 메뉴 지정 
+                
+                css3 : true, //css3  easing값을 사용할지여부
+                
+                easingcss3 : 'ease-out', // css3에서의 easing값
+                
+                loopTop : true, //첫 섹션에서 휠을 위로하면 마지막 섹션으로 이동
+                
+                loopBottom : true, //마지막 섹션에서 휠을 아래로 하면 첫 섹션으로 이동
+                
+                scrollBar : false //스크롤바를 보여줄것인지 여부
+                
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li data-menuanchor ="page1"><a href="#page1">MENU1</a></li>
+                <li data-menuanchor ="page2"><a href="#page2">MENU2</a></li>
+                <li data-menuanchor ="page3"><a href="#page3">MENU3</a></li>
+                <li data-menuanchor ="page4"><a href="#page4">MENU4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="fullpage">
+        <div class="section" id="section0"></div>
+        <div class="section" id="section1"></div>
+        <div class="section" id="section2"></div>
+        <div class="section" id="section3"></div>
+    </div>
+</body>
+</html>
